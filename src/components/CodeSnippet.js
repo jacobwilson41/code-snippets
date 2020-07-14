@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CodeMirrorInstance } from './CodeMirrorInstance';
+import './CodeSnippet.css'
 import axios from 'axios';
 
 export const CodeSnippet = ({ value }) => {

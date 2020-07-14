@@ -24,8 +24,12 @@ export const Content = () => {
     fetchMarkdown();
   }, []);
 
+  const styles = {
+    margin: '20px'
+  }
+
   return (
-    <div>
+    <div className="content" style={styles}>
       <ReactMarkdown source={markdown} renderers={{ code: CodeSnippet }} />
     </div>
   );

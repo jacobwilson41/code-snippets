@@ -1,0 +1,12 @@
+.code-snippet {
+  display: flex;
+  justify-content: space-between;
+}
+
+.react-codemirror2 {
+  width: 48%;
+}
+
+iframe {
+width: 48%
+}
