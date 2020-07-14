@@ -4,29 +4,28 @@ import axios from 'axios';
 
 export const CodeSnippet = ({ value }) => {
 
-  const [html, setHtml] = useState('this is where the code preview will go');
+  const [srcUrl, setSrcUrl] = useState('');
+  const [code, setCode] = useState(value);
 
   useEffect(() => {
-    async function getHtmlFromJsx() {
-      const url = 'https://real-react-editor-server.herokuapp.com'
+    async function getSrcUrl() {
+      const baseUrl = 'https://real-react-editor-server.herokuapp.com'
 
       try {
-        const {data: {key}} = await axios.post(url, { code: value })
+        const {data: {key}} = await axios.post(baseUrl, { code })
+        setSrcUrl(`${baseUrl}/${key}`)
 
-        const {data: html} = await axios.get(`${url}/${key}`)
-
-        setHtml(html);
       } catch(error) {
         console.error(error)
       }
     }
-    getHtmlFromJsx();
-  }, [value]);
+    getSrcUrl();
+  }, [code]);
 
   return (
     <div className="code-snippet">
-      <CodeMirrorInstance value={value} />
-      <iframe title="result" srcDoc={html} className="result" />
+      <CodeMirrorInstance value={code} setCode={setCode} />
+      <iframe title="result" src={srcUrl} className="result" />
     </div>
   )
 }
