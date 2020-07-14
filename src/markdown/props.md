@@ -37,10 +37,6 @@ const App = () => {
 };
 ```
 
-```warning
-The JSX will still work if you write `class`, but React will display an error in your console.
-```
-
 If we need to assign several props to an element, it should be broken up into multiple lines.
 
 ```jsx
