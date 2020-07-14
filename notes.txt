@@ -1,0 +1,5 @@
+can Elements.md and Props.md be combined into one file so that I only have to make one request?  -- ask Stephen this
+
+the "warning" block of code in props.md is giving me a bad request error when I try to post it to the API
+
+also I'm making like 20 XHR requests on page load - not good.  Can I somehome consolidate them?
